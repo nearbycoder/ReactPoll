@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900');
+@import url('https://fonts.googleapis.com/css?family=Cabin+Sketch');
+
+body {
+  background-color: #323232;
+  font-family: 'Lato', sans-serif;
+}
+
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
+
+.header > .title {
+  margin: 10px auto;
+  text-align: center;
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 45px;
+  color: #EEEEEE;
+}
+
+.paper {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.paper > .title {
+  font-weight: bold;
+  color: #D44B4B;
+  font-size: 22px;
+  margin: 5px 0;
+}
+
+.paper > .body {
+  background-color: #FFD557;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.paper > .body:before {
+  border-left: 3px solid red;
+}
+
+.question-vote, .answer-vote, .question-result, .answer-result {
+  font-size: 22px;
+  border-bottom: 3px solid rgba(75,172,211,0.55);
+  color: #505050;
+  padding: 20px 0px;
+}
+
+.question-vote, .question-result, .answer-result {
+  padding: 20px 45px;
+}
+
+.answer-vote > .checklist-info > .checklist-label {
+  font-size: 22px;
+  width: 80%;
+  margin-bottom: 50px;
+}
+
+.question > textarea, .answer > input[type=text] {
+  border: none;
+  width: 100%;
+  height: 100%;
+  padding: 20px 45px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  background-color: #FFD557;
+  font-size: 22px;
+  color: #505050;
+  border-bottom: 3px solid rgba(75,172,211,0.55);
+}
+
+.question > textarea {
+  overflow: auto;
+}
+
+.spacer {
+  height: 30px;
+  width: 100%;
+}
+
+.spacer-small {
+  height: 20px;
+  width: 100%;
+}
+
+.create-poll {
+  margin: 20px;
+  padding: 10px 40px;
+  font-size: 20px;
+  background-color: #D34B4B;
+  color: #E1E1E1;
+  border: none;
+  float: right;
+}
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  color: #757575;
+}
+
+input:-moz-placeholder, textarea::-moz-placeholder { /* Firefox 18- */
+  color: #757575;
+}
+
+input::-moz-placeholder, textarea::-moz-placeholder {  /* Firefox 19+ */
+  color: #757575;
+}
+
+input:-ms-input-placeholder, textarea::-ms-input-placeholder {  
+  color: #757575;
+}
+.verticleline1, .verticleline2 {
+  height: 100%;
+  position: absolute;
+  border-left: 3px solid rgba(211,75,75,0.55);
+}
+
+.verticleline1 {
+  left: 18px;
+}
+
+.verticleline2 {
+  left: 25px;
+}
+
+
+
+.checklist {
+  width: 46px;
+  height: 46px;
+  position: relative;
+  margin: 20px 20px 20px 40px;
+  display: inline-block;
+  vertical-align: top;
+}
+.checklist label {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  border: 3px solid rgba(75,172,211,0.75);
+  background-color: #323232;
+}
+.checklist label:after {
+  content: '';
+  width: 35px;
+  height: 15px;
+  position: absolute;
+  top: 0px;
+  left: 4px;
+  border: 8px solid #D44B4B;
+  border-top: none;
+  border-right: none;
+  background: transparent;
+  opacity: 0;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.checklist label:hover {
+  border: 3px solid rgba(211,75,75,0.55);
+}
+.checklist label:hover::after {
+  opacity: 0.3;
+}
+.checklist input[type=checkbox] {
+  visibility: hidden;
+}
+.checklist input[type=checkbox]:checked + label:after {
+  opacity: 1;
+}
+.checklist input[type=checkbox]:checked + label {
+  border: 3px solid rgba(211,75,75,075);
+}
+
+.checklist-label {
+  font-size: 18px;
+  display: inline-block;
+  top: 34px;
+  color: #505050;
+  position: relative;
+}
+
+@media (max-width: 767px) {
+  .checklist-label {
+    display: block;
+    top: 0px!important;
+    font-size: 18px!important;
+    padding: 20px 45px!important;
+  }
+}
+
+
+.bar-result {
+  height: 50px;
+  width: 100%;
+  border: 2px solid #424242;
+  position: relative;
+}
+
+.bar-meter {
+  position: absolute;
+  height: 100%;
+  -webkit-transition: width 2s;
+  background-color: #D34B4B;
+}
+
+.bar-label {
+  position: absolute;
+  font-weight: bolder;
+  top: 10px;
+  color: white;
+  opacity: .8;
+  width: 100%;
+  text-align: center;
+}
+
+.not-found {
+  text-align: center;
+  padding: 30px 0;
+}
+
+.not-found > h1 {
+  color: #505050;
+  border-bottom: 3px solid rgba(75,172,211,0.55);
+  border-top: 3px solid rgba(75,172,211,0.55);
+  font-size: 60px;
+  padding: 20px 0;
+}
+
+.result-small {
+  font-weight: bolder;
+}

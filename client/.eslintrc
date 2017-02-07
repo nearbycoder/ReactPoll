@@ -1,0 +1,11 @@
+"eslintConfig": {
+  "extends": "./node_modules/react-scripts/config/eslint.js",
+  "env": {
+    "browser": true,
+    "mocha": true,
+    "node": true
+  },
+  "rules": {
+    "strict": 0
+  }
+}
