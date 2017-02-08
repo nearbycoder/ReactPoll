@@ -3,7 +3,7 @@ var bodyParser = require('body-parser');
 var app        = express();
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
-var settings = require('./.env.js');
+require('dotenv').config();
 
 var allowCrossDomain = function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
@@ -29,7 +29,7 @@ var port = process.env.PORT || 9090; // set our port
 
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
-mongoose.connect(settings.db); // connect to our database
+mongoose.connect(process.env.DB); // connect to our database
 var Poll = require('./models/poll');
 
 // ROUTES FOR OUR API

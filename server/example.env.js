@@ -1,3 +1,0 @@
-module.exports = {
-  db: 'mongo connection here'
-}
