@@ -13,7 +13,12 @@ export default class NewPoll extends Component {
 
   savePoll() {
     const { poll } = this.props;
-    this.props.actions.savePoll(poll);
+    const hasContent = poll.options.some((option) => {
+      return option.value !== "";
+    })
+    if (poll.question !== "" && hasContent) {
+      this.props.actions.savePoll(poll);
+    }
   }
 
   renderOptions() {

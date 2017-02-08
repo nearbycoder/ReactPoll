@@ -35,7 +35,7 @@ export default class Vote extends Component {
               <input type="checkbox" name={option.id} id={option.id} ref={option.id} onClick={(event) => this.updateClicked(event)} />
               <label htmlFor={option.id}></label>
             </div>
-            <span className="checklist-label">{ option.value }</span>
+            <span className="checklist-label vote-label">{ option.value }</span>
           </div>
         </div>
       )

@@ -82,6 +82,7 @@ body {
 
 .question > textarea {
   overflow: auto;
+  min-height: 68px;
 }
 
 .spacer {
@@ -187,17 +188,24 @@ input:-ms-input-placeholder, textarea::-ms-input-placeholder {
 .checklist-label {
   font-size: 18px;
   display: inline-block;
-  top: 34px;
+  top: 33px;
   color: #505050;
   position: relative;
 }
 
 @media (max-width: 767px) {
-  .checklist-label {
-    display: block;
-    top: 0px!important;
+  .checklist-label.vote-label {
+    width: 50%!important;
+    top: 12px!important;
     font-size: 18px!important;
-    padding: 20px 45px!important;
+    padding: 20px 15px!important;
+  }
+  .question > textarea {
+    font-size: 20px;
+    overflow: auto;
+  }
+  .answer > input[type=text] {
+    font-size: 20px;
   }
 }
 
