@@ -169,6 +169,7 @@ input:-ms-input-placeholder, textarea::-ms-input-placeholder {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
 }
+
 .checklist label:hover {
   border: 3px solid rgba(211,75,75,0.55);
 }
