@@ -83,7 +83,6 @@ app.route('/poll/:poll_id')
   // get the poll with that id
   .get(function(req, res) {
     Poll.findOne({id: req.params.poll_id}, function(err, poll) {
-      console.log(poll)
       if (err)
         res.send(err);
       if (poll) {
