@@ -29,7 +29,7 @@ var port = process.env.PORT || 9090; // set our port
 
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.DB); // connect to our database
+mongoose.connect(process.env.MONGO_URL); // connect to our database
 var Poll = require('./models/poll');
 
 // ROUTES FOR OUR API
