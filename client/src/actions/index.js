@@ -4,7 +4,7 @@ import { push } from 'react-router-redux';
 export function savePoll (poll) {
   return (dispatch, getState) => {
     const body = JSON.stringify({...poll});
-    fetch('http://127.0.0.1:9090/poll', {
+    fetch(`${process.env.REACT_APP_SERVER_URL}/poll`, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -23,7 +23,7 @@ export function savePoll (poll) {
 export function pollVote (votes, poll) {
   return (dispatch, getState) => {
     const body = JSON.stringify({...votes});
-    fetch(`http://127.0.0.1:9090/poll/${poll.id}`, {
+    fetch(`${process.env.REACT_APP_SERVER_URL}/poll/${poll.id}`, {
       method: 'PUT',
       headers: {
         'Accept': 'application/json',
@@ -40,7 +40,7 @@ export function pollVote (votes, poll) {
 
 export function getPoll (id) {
   return (dispatch, getState) => {
-    fetch(`http://127.0.0.1:9090/poll/${id}`, {
+    fetch(`${process.env.REACT_APP_SERVER_URL}/poll/${id}`, {
       method: 'GET',
       headers: {
         'Accept': 'application/json',

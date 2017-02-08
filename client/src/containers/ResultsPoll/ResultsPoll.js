@@ -6,7 +6,7 @@ export default class ResultsPoll extends Component {
     super(props);
     this.props.actions.getPoll(props.params.id);
 
-    var socket = io.connect('http://192.168.10.12:9090', {'sync disconnect on unload':true});
+    var socket = io.connect(process.env.REACT_APP_SERVER_URL, {'sync disconnect on unload':true});
     socket.on(`vote:${props.params.id}`, function(poll){
       props.actions.setPoll(poll);
     });
